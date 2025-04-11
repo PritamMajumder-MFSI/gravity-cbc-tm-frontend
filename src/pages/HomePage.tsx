@@ -6,6 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage: FC = () => {
   const navigate = useNavigate();
+  const handleCareerGuidance = () => {
+    window.parent.postMessage(
+      {
+        type: "TM_BUTTON_CLICKED",
+        courseId: 144,
+        lessonId: 180,
+      },
+      "*"
+    );
+  };
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 animate-[soft-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
       {/* Animated background elements */}
@@ -30,7 +40,7 @@ const HomePage: FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <Button
               icon={BriefcaseIcon}
-              onClick={() => {}}
+              onClick={handleCareerGuidance}
               text={"Career Guidance"}
               type={"blue"}
             />

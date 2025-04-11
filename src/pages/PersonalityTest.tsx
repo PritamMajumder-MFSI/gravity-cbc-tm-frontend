@@ -1,10 +1,19 @@
-import { useState, FC } from "react";
+import { FC } from "react";
 import { GlobeAmericasIcon, FlagIcon } from "@heroicons/react/24/solid";
 import Button from "../components/Button";
 import PersonalityTestHeader from "../components/PersonalityHeader";
 
 const PersonalityTest: FC = () => {
-  const [, setSelectedLanguage] = useState<string | null>(null);
+  const handleLanguageSelection = (language: string) => {
+    window.parent.postMessage(
+      {
+        type: "TM_BUTTON_CLICKED",
+        courseId: 144,
+        lessonId: language === "English" ? 178 : 179,
+      },
+      "*"
+    );
+  };
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 animate-[soft-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
@@ -30,7 +39,7 @@ const PersonalityTest: FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <Button
               icon={GlobeAmericasIcon}
-              onClick={() => setSelectedLanguage("Swahili")}
+              onClick={() => handleLanguageSelection("Swahili")}
               text={"Swahili"}
               type={"blue"}
             />
@@ -41,7 +50,7 @@ const PersonalityTest: FC = () => {
 
             <Button
               icon={FlagIcon}
-              onClick={() => setSelectedLanguage("English")}
+              onClick={() => handleLanguageSelection("English")}
               text={"English"}
               type={"emerald"}
             />
