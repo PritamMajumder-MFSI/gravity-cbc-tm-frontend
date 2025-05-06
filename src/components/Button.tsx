@@ -40,7 +40,7 @@ const Button: FC<ButtonProps> = ({ text, icon: Icon, onClick, type }) => {
         relative flex items-center justify-center gap-3
         px-10 py-5 rounded-2xl 
         transition-all duration-500 
-        hover:scale-110 hover:shadow-lg
+       hover:shadow-lg
         active:scale-95
         text-xl font-semibold
         group
