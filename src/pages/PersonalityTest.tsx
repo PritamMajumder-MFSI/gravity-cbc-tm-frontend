@@ -16,7 +16,7 @@ const PersonalityTest: FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 animate-[soft-pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+    <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 ">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
